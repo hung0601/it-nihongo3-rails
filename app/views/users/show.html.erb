@@ -1,4 +1,9 @@
 <h1>プロフィール</h1>
+<p>
+  <% if @user.image.attached? %>
+    <%= image_tag @user.image,style: ' width:200px;'%>
+  <% end %>
+</p>
 
 <h3>メールアドレス</h3>
 <%= @user.email %> 
