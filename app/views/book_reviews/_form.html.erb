@@ -1,0 +1,29 @@
+<%= form_with(model: @book_review, local: true) do |form| %>
+<%if false%>
+  <% if book_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_review.errors.count, "error") %> prohibited this book_review from being saved:</h2>
+
+      <ul>
+        <% book_review.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+
+  <div class="field">
+    <%= form.hidden_field :book_id ,value: @book.id%>
+  </div>
+
+  <div class="field">
+    <%= form.label :review %>
+    <%= form.text_area :review %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
